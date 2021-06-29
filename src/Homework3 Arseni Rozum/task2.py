@@ -4,7 +4,7 @@
 
 dict_1 = {}
 for _ in range(int(input())):
-    country, *town = input().split()
+    country, *towns = input().split()
     for town in towns:
         dict_1[town] = country
 print(*(dict_1[input()] for _ in range(int(input()))), sep="\n")
