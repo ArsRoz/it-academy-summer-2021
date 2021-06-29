@@ -6,4 +6,4 @@
 # Распечатайте полученный список.
 
 lst_1 = [1, 0, 3, 0, 2, 0, 0, 4]
-print([i for i in lst_1 if i] + [0]*lst_1.count(0))
+print([i for i in lst_1 if i] + [0] * lst_1.count(0))
