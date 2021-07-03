@@ -2,5 +2,5 @@
 # так чтобы его ключами были числа от 1 до 20,
 # а значениями кубы этих чисел.
 
-dict_1 = {x: x**3 for x in range(1, 21)}
-print(dict_1)
+dict_11 = {x: x**3 for x in range(1, 21)}
+print(dict_11)
