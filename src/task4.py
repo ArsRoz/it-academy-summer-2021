@@ -1,8 +1,4 @@
-try:
-    with open("ratings.txt") as rating_list:
-        print("")
-except FileNotFoundError:
-    print("File lost")
+
 
 with open("ratings.txt") as rating_list:
     rating_list.seek(830)
