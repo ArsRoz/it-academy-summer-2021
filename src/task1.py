@@ -17,8 +17,8 @@ def total_price():
     price_rub = price_q // 100
     price_penny = price_q % 100
 
-    print("Общая ст-ть: " + str(price_rub) + "руб. " +
-          str(price_penny) + "коп.")
+    print("Общая ст-ть: " + str(price_rub) + "руб. "
+    + str(price_penny) + "коп.")
 
 # 1-2
 
