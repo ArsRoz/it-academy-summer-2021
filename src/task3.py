@@ -1,9 +1,29 @@
-# 3.Даны два списка чисел.
-# Посчитайте, сколько различных чисел
-# содержится одновременно как в первом списке,
-# так и во втором.
+"""Реализовать функцию get_ranges которая получает на вход непустой список
+неповторяющихся целых чисел, отсортированных по возрастанию,
+которая этот список “сворачивает”
+ get_ranges([0, 1, 2, 3, 4, 7, 8, 10]) // "0-4,7-8,10"
+ get_ranges([4,7,10]) // "4,7,10"
+ get_ranges([2, 3, 8, 9]) // "2-3,8-9"""
 
-list_1 = [1, 2, 3, 4, 5, 6, 12]
-list_2 = [1, 6, 8, 9, 2]
-res = [x for x in list_1 + list_2 if x not in list_1 or x not in list_2]
-print('В списках 1 и 2 ', len(res), 'различных чисел')
+
+def get_ranges(lst):
+    total = [lst[0]]
+    for item in lst[1::]:
+        if int(item) - int(total[-1]) == 1:
+            total.append(item)
+        else:
+            if total[0] == total[-1]:
+                print(str(total[0]), end=",")
+            else:
+                print(str(total[0]) + "-" + str(total[-1]), end=",")
+            total.clear()
+            total.append(item)
+    if total[0] == total[-1]:
+        print(str(total[0]))
+    else:
+        print(str(total[0]) + "-" + str(total[-1]))
+
+
+get_ranges([0, 1, 2, 3, 4, 7, 8, 10])
+get_ranges([4, 7, 10])
+get_ranges([2, 3, 8, 9])
