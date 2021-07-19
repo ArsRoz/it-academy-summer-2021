@@ -243,19 +243,19 @@ def cities():
 
 
 def two_list_number1():
-    list_1_4_3 = [1, 2, 3, 4, 5, 6, 12]
-    list_2_4_3 = [1, 6, 8, 9, 2]
-    res_4_3 = [x for x in list_1_4_3 + list_2_4_3 if x not in list_1_4_3 or x not in list_2_4_3]
-    print('В списках 1 и 2 ', len(res_4_3), 'различных чисел')
+    list_1 = [1, 2, 3, 4, 5, 6, 12]
+    list_2 = [1, 6, 8, 9, 2]
+    res = [x for x in list_1 + list_2 if x not in list_1 or x not in list_2]
+    print('В списках 1 и 2 ', len(res), 'различных чисел')
 
 # 4-4
 
 
 def two_list_number2():
-    list_1_4_4 = [1, 2, 3, 4, 5, 6, 12]
-    list_2_4_4 = [1, 6, 8, 9, 2, 46, 55]
-    res_4_4 = [x for x in list_1_4_4 and list_2_4_4 if x not in list_1_4_4 or x not in list_2_4_4]
-    print('В списке list_2 ', len(res_4_4), 'различных чисел')
+    list_1 = [1, 2, 3, 4, 5, 6, 12]
+    list_2 = [1, 6, 8, 9, 2, 46, 55]
+    res = [x for x in list_1 and list_2 if x not in list_1 or x not in list_2]
+    print('В списке list_2 ', len(res), 'различных чисел')
 
 # 4-5
 
