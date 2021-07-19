@@ -14,10 +14,10 @@ def total_price():
     q = int(input("Укажите количество: "))
 
     price_q = (rub * 100 + penny) * q
-    price_rub = price_q // 100
+    price_r = price_q // 100
     price_penny = price_q % 100
 
-    print("Общая ст-ть: " + str(price_rub) + "руб. " + str(price_penny) + "коп.")
+    print("Общая ст-ть: " + str(price_r) + "руб. " + str(price_penny) + "коп.")
 
 # 1-2
 
