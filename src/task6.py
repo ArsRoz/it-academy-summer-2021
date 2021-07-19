@@ -3,6 +3,6 @@
 
 num_1 = int(input())
 i = 1
-while num_1 % 2**i ==0:
+while num_1 % 2 ** i == 0:
     i += 1
 print(2 ** (i-1))
