@@ -355,7 +355,7 @@ for name in names_in_module:
         continue
     else:
         list_names_of_functions.append(name)
-      
+
     def runner(*args):
         if not args:
             for func_name in list_names_of_functions:
