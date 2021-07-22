@@ -4,7 +4,7 @@
  b. runner(‘func_name’) – вызывается только функцию func_name.
  c. runner(‘func’, ‘func1’...) - вызывает все переданные функции
 """
-from string import ascii_letters
+
 
 # 1-1
 
