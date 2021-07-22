@@ -294,7 +294,7 @@ def two_list_number2():
     list_1_4_4 = [1, 2, 3, 4, 5, 6, 12]
     list_2_4_4 = [1, 6, 8, 9, 2, 46, 55]
     res_4_4 = [x for x in list_1_4_4 and list_2_4_4 if x
-              not in list_1_4_4 or x not in list_2_4_4]
+               not in list_1_4_4 or x not in list_2_4_4]
     print('В списке list_2 ', len(res_4_4), 'различных чисел')
 
 
@@ -355,6 +355,7 @@ for name in names_in_module:
         continue
     else:
         list_names_of_functions.append(name)
+    
     def runner(*args):
         if not args:
             for func_name in list_names_of_functions:
