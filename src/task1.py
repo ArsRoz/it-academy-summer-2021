@@ -4,26 +4,26 @@
  b. runner(‘func_name’) – вызывается только функцию func_name.
  c. runner(‘func’, ‘func1’...) - вызывает все переданные функции
 """
+from string import ascii_letters
 
 # 1-1
 
 
-def total_price():
-    rub = int(input("Укажите стоимость, руб: "))
-    penny = int(input("Укажите стоимость, коп: "))
-    q = int(input("Укажите количество: "))
+def my_func_2_1(rub, penny, count):
 
-    price_q = (rub * 100 + penny) * q
-    price_r = price_q // 100
-    price_penny = price_q % 100
+    price = (rub * 100 + penny) * count
+    price_rub = price // 100
+    price_pen = price % 100
+    print('Общая стоимость: ', str(price_rub) + ' руб.',
+          str(price_pen) + ' коп.')
 
-    print("Общая ст-ть: " + str(price_r) + "руб. " + str(price_penny) + "коп.")
+
+my_func_2_1(3, 20, 3)
 
 # 1-2
 
 
-def longest_word():
-    text = input("Введите текст: ")
+def longest_word(text):
     punctuation = ',.:;-_!?'
 
     for i in text:
@@ -38,12 +38,14 @@ def longest_word():
 
     print(max_text)
 
+
+longest_word("sdfdf, sdfds. sdfgfg")
+
+
 # 1-3
 
 
-def del_spaces():
-    inp_text = input("Введите текст: ")
-
+def del_spaces(inp_text):
     inp_text = inp_text.replace(' ', '')
     n_text = ''
 
@@ -53,12 +55,14 @@ def del_spaces():
 
     print(n_text)
 
+
+del_spaces("i np _te xt")
+
+
 # 1-4
 
 
-def lower_upper():
-    inp_str = input("Введите текст: ")
-
+def lower_upper(inp_str):
     a = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
     inp_str1 = ''
     for i in inp_str:
@@ -79,12 +83,12 @@ def lower_upper():
             up_str1 += i
     print("Количество строчных букв = " + str(len(up_str1)))
 
+
+lower_upper("sdfhvdfgDFG")
 # 1-5
 
 
-def n_fibonacci():
-    n = int(input("Введите n-е число Фибоначчи: "))
-
+def n_fibonacci(n):
     f1 = 0
     f2 = 1
     i = 1
@@ -96,11 +100,12 @@ def n_fibonacci():
 
     print(f1)
 
+
+n_fibonacci(5)
 # 1-6
 
 
-def palindrome():
-    number = int(input('Число: '))
+def palindrome(number):
     number_1 = number
     p = 0
     while number > 0:
@@ -112,13 +117,13 @@ def palindrome():
     else:
         print("Не полиндром")
 
+
+palindrome(112211)
+
 # 1-7
 
 
-def triangle():
-    a = int(input("Введите 1-ую сторону: "))
-    b = int(input("Введите 2-ую сторону: "))
-    c = int(input("Введите 3-ую сторону: "))
+def triangle(a, b, c):
 
     if (a + b) > c and (b + c) > a and (c + a) > b:
         p = (a + b + c) / 2
@@ -128,6 +133,10 @@ def triangle():
         print("Это треугольник площадью " + square[:5])
     else:
         print("Это НЕ треугольник")
+
+
+triangle(3, 5, 6)
+
 
 # 3-1
 
@@ -142,6 +151,9 @@ def fizzbuzz():
             print("Fizz")
         else:
             print(number)
+
+
+fizzbuzz()
 
 # 3-2
 
@@ -161,6 +173,10 @@ def learn_list():
     lst_4 = lst_3[:]
     lst_4.insert(1, "2a")
     print(lst_4)
+
+
+learn_list()
+
 
 # 3-3
 
@@ -187,8 +203,10 @@ def learn_tuple():
     print(len(tpl_3))
 
 
-def list_number():
-    str_ = input('Введите числа через пробел: ')
+learn_tuple()
+
+
+def list_number(str_):
     lst = str_.split()
     num = 0
     for i in lst:
@@ -197,16 +215,21 @@ def list_number():
             num += lst.count(i)
     print('Количество пар: ' + str(num))
 
+
+list_number("1, 1, 2, 5, 5")
 # 3-5
 
 
-def unique_elements():
-    lst = [1, 2, 3, 1, 1, 2, 4, 7, 'a', 'b', 'a']
+def unique_elements(lst):
     new_lst = []
     for i in lst:
         if lst.count(i) == 1:
             new_lst.append(i)
     print(new_lst)
+
+
+unique_elements([1, 2, 3, 1, 1, 2, 4, 7, 'a', 'b', 'a'])
+
 
 # 3-6
 
@@ -219,6 +242,10 @@ def sort_list():
             lst.append(i)
     print(lst)
 
+
+sort_list()
+
+
 # 4-1
 
 
@@ -226,6 +253,10 @@ def dict_comprehensions():
     dict_4_1 = {x: x**3 for x in range(1, 21)}
 
     print(dict_4_1)
+
+
+dict_comprehensions()
+
 
 # 4-2
 
@@ -238,112 +269,99 @@ def cities():
             dict_1[town] = country
     print(*(dict_1[input()] for _ in range(int(input()))), sep="\n")
 
+
+cities()
+
+
 # 4-3
 
 
 def two_list_number1():
-    list_1 = [1, 2, 3, 4, 5, 6, 12]
-    list_2 = [1, 6, 8, 9, 2]
-    res = [x for x in list_1 + list_2 if x not in list_1 or x not in list_2]
-    print('В списках 1 и 2 ', len(res), 'различных чисел')
+    list_1_4_3 = [1, 2, 3, 4, 5, 6, 12]
+    list_2_4_3 = [1, 6, 8, 9, 2]
+    res_4_3 = [x for x in list_1_4_3 + list_2_4_3 if x not in list_1_4_3 or x not in list_2_4_3]
+    print('В списках 1 и 2 ', len(res_4_3), 'различных чисел')
+
+
+two_list_number1()
+
 
 # 4-4
 
 
 def two_list_number2():
-    list_1 = [1, 2, 3, 4, 5, 6, 12]
-    list_2 = [1, 6, 8, 9, 2, 46, 55]
-    res = [x for x in list_1 and list_2 if x not in list_1 or x not in list_2]
-    print('В списке list_2 ', len(res), 'различных чисел')
+    list_1_4_4 = [1, 2, 3, 4, 5, 6, 12]
+    list_2_4_4 = [1, 6, 8, 9, 2, 46, 55]
+    res_4_4 = [x for x in list_1_4_4 and list_2_4_4 if x not in list_1_4_4 or x not in list_2_4_4]
+    print('В списке list_2 ', len(res_4_4), 'различных чисел')
+
+
+two_list_number2()
+
 
 # 4-5
 
 
-def languages():
-    num_schoolboy = input('Введите количество школьников: ')
-    count1 = 1
-    dict_schoolboy_lang = {}
+def my_func_4_5(first_student, second_student, third_student):
 
-    while count1 <= int(num_schoolboy):
-        num_lang = input(f'Количество языков школьника № {count1}: ')
-        set_lang = set()
-        count2 = 1
-        while count2 <= int(num_lang):
-            lang = input('Перечислите языки: ')
-            set_lang.add(lang)
-            count2 += 1
-        dict_schoolboy_lang[count1] = set_lang
-        count1 += 1
+    popular_lang = set(
+        first_student) & set(second_student) & set(third_student)
+    print(len(popular_lang))
+    print('Все знают ---> ', list(popular_lang))
+    lang_list = set(
+        first_student) | set(second_student) | set(third_student)
+    print(len(lang_list))
+    print('Эти языки знает хотя бы один ученик ---> ', list(lang_list))
 
-    anyknown_lang = set()
-    for value in dict_schoolboy_lang.values():
-        anyknown_lang.update(value)
 
-    allknown_lang = anyknown_lang.copy()
-    for value in dict_schoolboy_lang.values():
-        allknown_lang.intersection_update(value)
-
-    print(f'Кол-во языков, которые знают все: {len(allknown_lang)}')
-    for lang in allknown_lang:
-        print(lang)
-
-    print(f'Кол-во языков, которые знает хотя бы один: {len(anyknown_lang)}')
-    for lang in anyknown_lang:
-        print(lang)
+first_student = ['Rus', 'Bel']
+second_student = ['Rus', 'Bel', 'Eng']
+third_student = ['Rus', 'Itl', 'Fr']
+my_func_4_5(first_student, second_student, third_student)
 
 # 4-6
 
 
-def different_words():
-    str_1 = input('введите текст:')
-    lst_1 = str_1.split()
-    set_1 = set(lst_1)
-    print(len(set_1), "разных слов.")
+def my_func_4_6(text):
+
+    for i in ('.', '!', '?'):
+        text = text.replace(i, '')
+    text = text.split()
+    print('Количество различных слов в тексте ---> ', len(set(text)))
+
+
+my_func_4_6('Введите текст: Привет Привет')
 
 # 4-7
 
 
-def euclid_nod():
-    num_1 = int(input('введите число 1:'))
-    num_2 = int(input('введите число 2:'))
+def euclid_nod(num_1, num_2):
     a, b = num_1, num_2
     while b:
         a, b = b, a % b
     print('НОД равен', a)
 
 
-func_dict = {
-    'total_price': total_price,
-    'longest_word': longest_word,
-    'del_spaces': del_spaces,
-    'lower_upper': lower_upper,
-    'n_fibonacci': n_fibonacci,
-    'palindrome': palindrome,
-    'triangle': triangle,
-    'fizzbuzz': fizzbuzz,
-    'learn_list': learn_list,
-    'learn_tuple': learn_tuple,
-    'list_number': list_number,
-    'unique_elements': unique_elements,
-    'sort_list': sort_list,
-    'dict_comprehensions': dict_comprehensions,
-    'cities': cities,
-    'two_list_number1': two_list_number1,
-    'two_list_number2': two_list_number2,
-    'languages': languages,
-    'different_words': different_words,
-    'euclid_nod': euclid_nod
-}
+euclid_nod(1234, 5484)
 
-
-def runner(*args):
-    if not args:
-        for func in func_dict.values():
-            func()
+names_in_module = dir()
+list_names_of_functions = []
+for name in names_in_module:
+    if name.startswith("__") and name.endswith("__"):
+        continue
+    elif name == "ascii_letters":
+        continue
     else:
-        for element in args:
-            func = func_dict.get(element)
-            func()
+        list_names_of_functions.append(name)
 
 
-runner()
+    def runner(*args):
+        if not args:
+            for func_name in list_names_of_functions:
+                start = globals()[func_name]
+                start()
+                for func_name in args:
+                    start = globals()[func_name]
+                    start()
+
+        runner("all_languages")
