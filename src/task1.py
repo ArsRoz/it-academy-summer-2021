@@ -6,11 +6,7 @@
 """
 
 
-# 1-1
-
-
-def my_func_2_1(rub, penny, count):
-
+def my_func_2_1(rub=3, penny=20, count=6):
     price = (rub * 100 + penny) * count
     price_rub = price // 100
     price_pen = price % 100
@@ -18,12 +14,7 @@ def my_func_2_1(rub, penny, count):
           str(price_pen) + ' коп.')
 
 
-my_func_2_1(3, 20, 3)
-
-# 1-2
-
-
-def longest_word(text):
+def longest_word(text="dsjfkjfjdksjcnxv jssjdfhjh dsjfh"):
     punctuation = ',.:;-_!?'
 
     for i in text:
@@ -39,13 +30,10 @@ def longest_word(text):
     print(max_text)
 
 
-longest_word("sdfdf, sdfds. sdfgfg")
-
-
 # 1-3
 
 
-def del_spaces(inp_text):
+def del_spaces(inp_text="i np _te xt"):
     inp_text = inp_text.replace(' ', '')
     n_text = ''
 
@@ -56,13 +44,10 @@ def del_spaces(inp_text):
     print(n_text)
 
 
-del_spaces("i np _te xt")
-
-
 # 1-4
 
 
-def lower_upper(inp_str):
+def lower_upper(inp_str="sdfhvdfgDFG"):
     a = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
     inp_str1 = ''
     for i in inp_str:
@@ -83,12 +68,10 @@ def lower_upper(inp_str):
             up_str1 += i
     print("Количество строчных букв = " + str(len(up_str1)))
 
-
-lower_upper("sdfhvdfgDFG")
 # 1-5
 
 
-def n_fibonacci(n):
+def n_fibonacci(n=5):
     f1 = 0
     f2 = 1
     i = 1
@@ -100,12 +83,10 @@ def n_fibonacci(n):
 
     print(f1)
 
-
-n_fibonacci(5)
 # 1-6
 
 
-def palindrome(number):
+def palindrome(number=112211):
     number_1 = number
     p = 0
     while number > 0:
@@ -118,12 +99,10 @@ def palindrome(number):
         print("Не полиндром")
 
 
-palindrome(112211)
-
 # 1-7
 
 
-def triangle(a, b, c):
+def triangle(a=3, b=5, c=6):
 
     if (a + b) > c and (b + c) > a and (c + a) > b:
         p = (a + b + c) / 2
@@ -133,9 +112,6 @@ def triangle(a, b, c):
         print("Это треугольник площадью " + square[:5])
     else:
         print("Это НЕ треугольник")
-
-
-triangle(3, 5, 6)
 
 
 # 3-1
@@ -152,8 +128,6 @@ def fizzbuzz():
         else:
             print(number)
 
-
-fizzbuzz()
 
 # 3-2
 
@@ -173,9 +147,6 @@ def learn_list():
     lst_4 = lst_3[:]
     lst_4.insert(1, "2a")
     print(lst_4)
-
-
-learn_list()
 
 
 # 3-3
@@ -203,10 +174,7 @@ def learn_tuple():
     print(len(tpl_3))
 
 
-learn_tuple()
-
-
-def list_number(str_):
+def list_number(str_="1, 1, 2, 5, 5"):
     lst = str_.split()
     num = 0
     for i in lst:
@@ -216,19 +184,15 @@ def list_number(str_):
     print('Количество пар: ' + str(num))
 
 
-list_number("1, 1, 2, 5, 5")
 # 3-5
 
 
-def unique_elements(lst):
+def unique_elements(lst=[1, 2, 3, 1, 1, 2, 4, 7, 'a', 'b', 'a']):
     new_lst = []
     for i in lst:
         if lst.count(i) == 1:
             new_lst.append(i)
-    print(new_lst)
-
-
-unique_elements([1, 2, 3, 1, 1, 2, 4, 7, 'a', 'b', 'a'])
+    print("В списке уникальными являются:", new_lst)
 
 
 # 3-6
@@ -243,9 +207,6 @@ def sort_list():
     print(lst)
 
 
-sort_list()
-
-
 # 4-1
 
 
@@ -253,9 +214,6 @@ def dict_comprehensions():
     dict_4_1 = {x: x**3 for x in range(1, 21)}
 
     print(dict_4_1)
-
-
-dict_comprehensions()
 
 
 # 4-2
@@ -270,9 +228,6 @@ def cities():
     print(*(dict_1[input()] for _ in range(int(input()))), sep="\n")
 
 
-cities()
-
-
 # 4-3
 
 
@@ -284,9 +239,6 @@ def two_list_number1():
     print('В списках 1 и 2 ', len(res_4_3), 'различных чисел')
 
 
-two_list_number1()
-
-
 # 4-4
 
 
@@ -296,9 +248,6 @@ def two_list_number2():
     res_4_4 = [x for x in list_1_4_4 and list_2_4_4 if x
                not in list_1_4_4 or x not in list_2_4_4]
     print('В списке list_2 ', len(res_4_4), 'различных чисел')
-
-
-two_list_number2()
 
 
 # 4-5
@@ -319,12 +268,12 @@ def my_func_4_5(first_student, second_student, third_student):
 first_student = ['Rus', 'Bel']
 second_student = ['Rus', 'Bel', 'Eng']
 third_student = ['Rus', 'Itl', 'Fr']
-my_func_4_5(first_student, second_student, third_student)
+
 
 # 4-6
 
 
-def my_func_4_6(text):
+def my_func_4_6(text='Введите текст: Привет Привет'):
 
     for i in ('.', '!', '?'):
         text = text.replace(i, '')
@@ -332,19 +281,15 @@ def my_func_4_6(text):
     print('Количество различных слов в тексте ---> ', len(set(text)))
 
 
-my_func_4_6('Введите текст: Привет Привет')
-
 # 4-7
 
 
-def euclid_nod(num_1, num_2):
+def euclid_nod(num_1=1234, num_2=5484):
     a, b = num_1, num_2
     while b:
         a, b = b, a % b
     print('НОД равен', a)
 
-
-euclid_nod(1234, 5484)
 
 names_in_module = dir()
 list_names_of_functions = []
@@ -356,13 +301,15 @@ for name in names_in_module:
     else:
         list_names_of_functions.append(name)
 
-    def runner(*args):
-        if not args:
-            for func_name in list_names_of_functions:
-                start = globals()[func_name]
-                start()
-                for func_name in args:
-                    start = globals()[func_name]
-                    start()
 
-        runner("all_languages")
+def runner(*args):
+    if not args:
+        for func_name in list_names_of_functions:
+            start = globals()[func_name]
+            start()
+    for func_name in args:
+        start = globals()[func_name]
+        start()
+
+
+runner("unique_elements")
